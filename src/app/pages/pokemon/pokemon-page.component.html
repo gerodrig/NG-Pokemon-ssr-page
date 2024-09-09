@@ -1,4 +1,8 @@
-@if(pokemon() === null){ } @else { @let myPokemon = pokemon()!;
+@if(pokemon() === null){
+<div class="flex justify-center">
+  <h1 class="text-4xl font-bold animate-pulse">Loading...</h1>
+</div>
+} @else { @let myPokemon = pokemon()!;
 
 <section class="flex flex-col justify-center">
   <div class="flex justify-center">
@@ -24,12 +28,10 @@
 
 <section class="flex flex-col justify-center">
   <h2 class="mt-2 text-2xl font-bold">Abilities</h2>
-<div class="flex flex-wrap items-center">
+  <div class="flex flex-wrap items-center">
     <ul class="mx-2">
       @for(ability of myPokemon.abilities; track ability.ability.name){
-      <li class="my-2">
-        - {{ ability.ability.name }}
-      </li>
+      <li class="my-2">- {{ ability.ability.name }}</li>
       }
     </ul>
   </div>

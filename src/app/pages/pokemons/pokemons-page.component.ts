@@ -7,7 +7,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { PokemonListComponent } from '../../pokemons/components/pokemon-list/pokemon-list.component';
 import { PokemonListSkeletonComponent } from './ui/pokemon-list-skeleton/pokemon-list-skeleton.component';
 import { SimplePokemon } from '../../pokemons/interfaces';
-import { map, tap, delay} from 'rxjs';
+import { map, tap, pipe, delay} from 'rxjs';
 import { PokemonsService } from '../../pokemons/services/pokemons.service';
 
 @Component({
@@ -33,6 +33,7 @@ export default class PokemonsPageComponent {
     )
   );
 
+    
   // public isLoading = signal<boolean>(true);
   // private appRef = inject(ApplicationRef);
 
@@ -67,6 +68,8 @@ export default class PokemonsPageComponent {
 
     // this.route.queryParamMap.subscribe(console.log);
     // console.log({pageToload, currenPage: this.currentPage()});
+
+
   }
 
   public loadPokemons(page = 0) {
