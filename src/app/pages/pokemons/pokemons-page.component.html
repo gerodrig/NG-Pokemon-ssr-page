@@ -11,6 +11,6 @@
   }
   <!-- Pagination buttons -->
   <div class="flex justify-between">
-    <button [disabled]="currentPage() === 1" (click)="loadPokemons(-1)" class="mt-2">Previous</button>
-    <button [disabled]="currentPage() === 66" (click)="loadPokemons(+1)" class="mt-2">Next</button>
+    <button [disabled]="currentPage() === 1" [routerLink]="['/pokemons/page', currentPage()! - 1]" class="mt-2">Previous</button>
+    <button [disabled]="currentPage() === 66" [routerLink]="['/pokemons/page', currentPage()! + 1]" class="mt-2">Next</button>
   </div>
